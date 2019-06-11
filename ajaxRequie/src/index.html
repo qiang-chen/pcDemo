@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    1111
+                </div>
+                <div class="swiper-slide">
+                    2222
+                </div>
+                <div class="swiper-slide">
+                    3333
+                </div>
+                <div class="swiper-slide">
+                    4444
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app/libs/require.js"></script>
+    <script>
+        require(['./main.js'],function(){
+            require(['Swiper','index'],function(Swiper,index){})
+        })
+    </script>
+</body>
+
+</html>

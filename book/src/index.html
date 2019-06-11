@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./app/css/index.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="box-left">
+            <div class="box-left-title">
+                <h1>境内外特价搜不停</h1>
+            </div>
+            <div class="search">
+                地址:
+                <input type="text" placeholder="请输入目的地" class="addr">
+                <!-- <div class="two">
+                    <h6>请您选择</h6>
+                    <p>444</p>
+                </div> -->
+            </div>
+            <div class="search">
+                酒店价格:
+                <select name="" id="" class="price">
+                    <option value="200">小于200元</option>
+                    <option value="300">小于300元</option>
+                    <option value="400">小于400元</option>
+                    <option value="500">小于500元</option>
+                    <option value="600">小于700元</option>
+                </select>
+            </div>
+            <div class="search">
+                评分是:
+                <input type="text" placeholder="请输入评分" class="grade">
+            </div>
+            <button>确认搜索</button>
+        </div>
+        <div class="box-right">
+            <dl>
+                <dt>
+                    <img src="./app/img/1.jpg" alt="">
+                </dt>
+                <dd>
+                    <p>acdcds</p>
+                    <p>评分是<span>5</span></p>
+                    <p>距离市区的位置是<span>5</span>公里</p>
+                    <p>酒店价格<span>44</span></p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <script src="./app/libs/require.js"></script>
+    <script>
+        require(['./main.js'], function () {
+            require(['home'], function (home) {
+
+            })
+        })
+    </script>
+</body>
+
+</html>

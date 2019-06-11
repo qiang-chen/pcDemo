@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人所得税</title>
+    <link rel="stylesheet" href="./app/css/index.css">
+</head>
+
+<body>
+    <!-- 
+        个人所得税计算公式
+        工资总数-5000免征-五险一金费用还有什么新增补贴费一类的大约几千
+    -->
+    <div class="container">
+        <div class="container-left">
+            <h1>北京市</h1>
+            <p>税后工资计算器</p>
+        </div>
+        <div class="container-right">
+            <h1>北京市税后工资计算器</h1>
+            <div class="add">
+                <span>税前: </span>
+                <div class="sum">
+                    <div class="input">
+                        <span>￥</span><input type="number" dir="rtl" value="0" class="importInput"/>
+                    </div>
+                    <div class="btn">
+                        <button>计算</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="select">
+                税后所的金额为: <input type="text" class="result">
+            </div>
+        </div>
+    </div>
+    <script src="./app/libs/require.js"></script>
+    <script>
+        require(['./main.js'],function(){
+            require(['index'],function(index){
+                new index()
+            })
+        })
+    </script>
+</body>
+
+</html>

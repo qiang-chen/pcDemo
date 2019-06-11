@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            margin: 150px auto;
+            position: relative;
+            width: 200px;
+        }
+        .box-one{
+            width: 200px;
+            height: 300px;
+            background: pink;
+        }
+        .mask{
+            width: 200px;
+            transition: all 80ms ease-out;
+            height: 0;
+            background: #000;
+            opacity: .5;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box-one">
+
+        </div>
+        <div class="mask"></div>
+    </div>
+    <script>
+        let box=document.querySelector(".box");
+        box.onmouseover=()=>{
+            box.lastElementChild.style.height="300px";
+        }
+
+        box.onmouseout=()=>{
+            box.lastElementChild.style.height="0";
+        }
+    </script>
+</body>
+</html>

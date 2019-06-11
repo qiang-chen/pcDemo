@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 300px;
+            padding: 20px;
+            margin: 50px auto;
+        }
+        ul{
+            display: none;
+        }
+        ul li{
+            height: 20px;
+            line-height: 20px;
+        }
+        .active{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="text" class="user">
+        <ul class="list">
+            <li>888</li>
+            <li>777</li>
+            <li>999</li>
+            <li>5555</li>
+            <li>4563</li>
+        </ul>
+    </div>
+    <script>
+        var user=document.querySelector(".user");
+        var list=document.querySelector(".list");
+        var box=document.querySelector(".box");
+        user.onfocus=function(){
+            list.style.display="block";
+        }
+        box.onclick=function(ev){
+            var e=ev||window.event;
+            var target=e.target||e.srcElement;
+            if(target.tagName=="LI"){
+                [...list.children].forEach((item) => {
+                    item.classList.remove("active")
+                });
+                target.classList.add("active");
+                var html=target.innerHTML;
+                user.value=html;
+                list.style.display="none";
+            }
+            e.stopPropagation()
+        }
+
+        document.onclick=function(){
+            user.value="";
+            list.style.display="none";
+        }
+    </script>
+</body>
+</html>

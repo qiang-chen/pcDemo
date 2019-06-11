@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: #000;
+}
+
+header {
+  height: 40px;
+  width: 100%;
+  background: #333;
+  font-size: 12px;
+}
+
+header a {
+  color: #757575;
+}
+
+.wrap {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.f {
+  display: flex;
+}
+
+.f > ul {
+  flex: 6;
+  height: 40px;
+}
+
+.f > ul > li {
+  line-height: 40px;
+  float: left;
+}
+
+.f > ul > li span {
+  margin: 0 4px;
+}
+
+.f > ul > li a:hover {
+  color: #b0b0b0;
+}
+
+.f .kong {
+  flex: 1.5;
+}
+
+.f ol {
+  flex: 1.5;
+  height: 40px;
+  text-align: center;
+}
+
+.f ol li {
+  line-height: 40px;
+  display: inline-block;
+}
+
+.f ol li span {
+  margin: 0 5px;
+}
+
+.f ol li a:hover {
+  color: #b0b0b0;
+}
+
+.f .header-shopping {
+  flex: 1;
+  height: 40px;
+  line-height: 40px;
+}
+
+.f .header-shopping i,
+.f .header-shopping span {
+  color: #757575;
+}
+
+.logo {
+  width: 100%;
+  height: 100px;
+}
+
+.l {
+  display: flex;
+}
+
+.l .logo-left {
+  flex: 1;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.l .logo-nav {
+  flex: 6;
+  width: 100%;
+  height: 100px;
+  margin-left: 60px;
+}
+
+.l .logo-nav > ul {
+  display: flex;
+}
+
+.l .logo-nav > ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  flex: 1;
+}
+
+.l .logo-nav > ul li a:hover {
+  color: red;
+}
+
+.l .logo-right {
+  flex: 3;
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  position: relative;
+}
+
+.l .logo-right .fl {
+  float: right;
+}
+
+.l .logo-right input:nth-child(1) {
+  width: 210px;
+  height: 50px;
+  outline: none;
+}
+
+.l .logo-right input:nth-child(1):focus {
+  width: 214px;
+  border: 1px solid orange;
+}
+
+.l .logo-right input:nth-child(2) {
+  width: 50px;
+  height: 54px;
+  background: #fff;
+  border: 0;
+  position: relative;
+  top: 22px;
+  right: 0;
+  border-top: 1px #999 solid;
+  border-bottom: 1px #999 solid;
+  border-right: 1px #999 solid;
+}
+
+.l .logo-right input:nth-child(2):hover {
+  background: orange;
+}
+
+.l .logo-right img {
+  position: absolute;
+  right: 18px;
+  top: 43px;
+}
+
+.l .logo-right .biaoqian {
+  position: absolute;
+  left: 49%;
+  top: 3%;
+  height: 30px;
+}
+
+.l .logo-right .biaoqian span {
+  background: #ccc;
+  padding: 5px;
+  font-size: 12px;
+  color: #999;
+}
+
+.l .logo-right .biaoqian span:hover {
+  background: orange;
+  color: #fff;
+}
+
+.logo-nav-select {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background: #999;
+  position: absolute;
+  left: 0;
+  top: 150px;
+  display: flex;
+  transition: all 1s ease-out;
+}
+
+.logo-nav-select-one {
+  flex: 1;
+}
+
+.logo-nav-select-one li:nth-child(1) {
+  height: 40px;
+  line-height: 40px;
+}
+
+.logo-nav-select-one li:nth-child(1) span {
+  border: 1px solid red;
+  padding: 5px 10px;
+}
+
+.logo-nav-select-one li {
+  width: 100%;
+  text-align: center;
+}
+
+.logo-nav-select-one li:last-child {
+  color: red;
+}
+
+.logo-right-search {
+  width: 212px;
+  position: absolute;
+  left: 53px;
+  top: 78px;
+  text-align: center;
+  border: solid 1px orange;
+  border-top: 0 solid #000;
+  z-index: -1;
+  display: none;
+}
+
+.logo-right-search p {
+  height: 30px;
+  line-height: 30px;
+}
+
+.logo-right-search p span:nth-child(1) {
+  float: left;
+}
+
+.logo-right-search p a {
+  float: right;
+  font-size: 12px;
+  color: #ccc;
+}

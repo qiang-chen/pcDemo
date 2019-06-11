@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./app/libs/swiper.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .swiper-container{
+            width: 200px;
+            height: 50px;
+            margin: 150px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                1
+            </div>
+            <div class="swiper-slide">
+                2
+            </div>
+            <div class="swiper-slide">
+                3
+            </div>
+        </div>
+    </div>
+    <script src='./app/libs/require.js'></script>
+    <script>
+        require(['./main.js'], function () {
+            require(['index'], function (index) {
+
+            })
+        })
+    </script>
+</body>
+
+</html>

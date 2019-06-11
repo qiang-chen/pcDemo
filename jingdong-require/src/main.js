@@ -1,0 +1,18 @@
+require.config({
+    paths:{
+        'Swiper':'./app/libs/swiper.min',
+        'css':'./app/libs/css.min',
+        'mySwiper':'./app/js/mySwiper',
+        'index':'./app/js/index'
+    },
+    shim:{
+        'Swiper':{
+            exports:[],
+            deps:['css!../src/app/libs/swiper.min.css']
+        },
+        'index':{
+            exports:[],
+            deps:['css!../src/app/css/index.css']
+        }
+    }
+})

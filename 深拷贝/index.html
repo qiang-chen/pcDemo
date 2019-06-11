@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../js/jquery11.js"></script>
+    <script>
+        $.ajax({
+            url:'./data.json',
+        }).then(function(res){
+            let data=res;
+            let newData=Object.assign([],data);
+            data.push({"c":"1"})
+            //console.log(data,newData)
+        })
+
+        //console.log(NaN==NaN);//false
+        //console.log(Object.is(NaN,NaN))//true
+        console.log(-0==+0);//true
+        console.log(Object.is(-0,+0))//false
+    </script>
+</body>
+</html>

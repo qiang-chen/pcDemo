@@ -1,0 +1,12 @@
+require.config({
+    paths:{
+        'jquery':'./libs/jquery.min',
+        'home':'./app/js/home',
+        'jquery-validation':'./libs/jquery-validation'
+    },
+    shim:{
+        'jquery':{
+            deps:['jquery-validation','jquery']
+        }
+    }
+})

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./app/css/index.css">
+</head>
+<body>
+    <div class="box">
+        <div class="top">
+            <dl>
+            <dt><img src="./app/images/show1.jpg" alt=""></dt>
+            <dd>
+                <p>加入购物车</p>
+                <p><span>106</span><span>103</span></p>
+                <p>sdcdscdscdscsd</p>
+            </dd>
+        </dl>
+        </div>
+        <div class="bottom">
+            <div class="bottom-one">
+                <p class="prev">上一页</p>
+            <ul class="list">
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+            </ul>
+            <p class="next">下一页</p>
+            <div class="small">
+                共<span>10</span>页,到第<span  class="dd">1</span>页
+                <button>确定</button>
+            </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="./app/libs/require.js"></script>
+    <script>
+        require(['./main.js'],function(){
+            require(['render'],function(render){
+                  new  render();
+            })
+        })
+    </script>
+</body>
+</html>

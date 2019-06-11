@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: #000;
+}
+html{
+    background: #ccc;
+}
+.top{
+    width: 96%;
+    height: 45px;
+    line-height: 45px;
+    background: rgba(0, 0, 0,0.8);
+    text-align: center;
+    padding: 0 30px;
+    .top-left{
+        float: left;
+        span{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            display: inline-block;
+            background: #fff;
+        }
+    }
+    ul{
+        display: inline-block;
+        overflow: hidden;
+        li{
+            float: left;
+            margin: 0 10px;
+            color:#ccc;
+        }
+    }
+    .top-right{
+        float: right;
+        span{
+            color: #ccc;
+            margin: 0 8px;
+        }
+    }
+}
+.nav{
+    width: 100%;
+    background: #fff;
+    height: 90px;
+    line-height: 90px;
+    background: #fff;
+    position: relative;
+    ul{
+        float: left;
+        li{
+            float: left;
+            margin: 0 8px;
+            a:hover{
+                color: skyblue;
+            }
+        }
+    }
+    .nav-right{
+        float: right;
+        position: relative;
+        input{
+            height: 20px;
+            width: 300px;
+            line-height: 20px;
+        }
+        i{
+            position: absolute;
+            top: 5px;
+            left: 6px;
+        }
+        span{
+            height: 15px;
+            line-height: 15px;
+            padding:1px 10px;
+            position: absolute;
+            border-radius: 10px;
+            border: 1px solid blue;
+            top: 38px;
+            right: 7px;
+            font-size: 12px;
+            background: skyblue;
+        }
+    }
+    .ulselect{
+        width: 100%;
+        height: 0px;
+        background: pink;
+        position: absolute;
+        top:90px;
+        left: 0;
+        z-index: 22;
+        transition: all 1s ease-out;
+    }
+}
+.wrap{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.banner{
+    position: relative;
+    margin-top: 20px;
+    ul{
+        li{
+        display: none;
+        img{
+            width: 1218px;
+            height: 553px;
+        }
+    }
+    li:nth-of-type(1){
+        display: block;
+    }
+    }
+    
+    ol{
+        position: absolute;
+        bottom: 10px;
+        left:50%;
+        transform: translateX(-50%);
+        li{
+            width: 20px;
+            height: 20px;
+            float: left;
+            margin: 0 10px;
+            border-radius: 50%;
+            background: #999;
+        }
+        li.active{
+            background: red;
+        }
+    }
+}
+.fixed{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 66;
+}
+.main{
+    margin-top: 20px;
+    width: 100%;
+}

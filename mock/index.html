@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="js/mock.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        // $.ajax({
+        //     url:'./js/data.json',
+        //     success:function(rs){
+        //         console.log(rs)
+        //     }
+        // })
+        let arr=[];
+        for (let i = 0; i < 10; i++) {
+            arr.push(Mock.mock('/api/item', {
+                id: Mock.Random.guid(),
+                name: Mock.Random.cname(),
+                addr: Mock.mock("@county(true)"),
+                'age|18-60': 1,
+                birth: Mock.Random.date(),
+                sex: Mock.Random.integer(0,1)
+            }));
+        }
+        $.ajax({
+            url: "/api/item",
+            dataType:"json",
+            success: function (rs) {
+                console.log(rs)
+            }
+        })
+        
+    </script>
+</body>
+
+</html>

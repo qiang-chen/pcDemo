@@ -1,0 +1,10 @@
+require.config({
+    paths:{
+        'home':"./app/js/home",
+        'ajax':'./app/js/ajax',
+        'creatMock':'./app/js/creatMock',
+        'Mock':'./app/libs/mock-min',
+        'jquery':'./app/libs/jquery.min',
+        'utils':'./app/js/utils'
+    }
+})

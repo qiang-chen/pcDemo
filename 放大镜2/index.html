@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./swiper-4.4.6/dist/css/swiper.min.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="left">
+            <div class="picBox">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./img/1.jpeg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/2.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/3.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./img/4.jpg" alt=""></div>
+                    </div>
+                </div>
+                <div class="mask"></div>
+            </div>
+            <div class="titleBox">
+                <div class="title active"><img src="./img/1.jpeg" alt=""></div>
+                <div class="title"><img src="./img/2.jpg" alt=""></div>
+                <div class="title"><img src="./img/3.jpg" alt=""></div>
+                <div class="title"><img src="./img/4.jpg" alt=""></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+        <div class="right">
+            <img src="" alt="">
+        </div>
+    </div>
+</body>
+<script src="./swiper-4.4.6/dist/js/swiper.js"></script>
+<script src="./jquery.js"></script>
+<script>
+    const picBox = document.querySelector(".picBox");
+    const bigImg = document.querySelector(".right img");
+    const mask = document.querySelector(".mask");
+    const title = [...document.querySelectorAll(".title")];
+    const big = document.querySelector(".right");
+    img = document.querySelector(".active img");
+    src = img.src;
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        on: {
+            setTranslate: function(translate) {
+
+            },
+            slideChange: function() {
+                for (var j = 0; j < title.length; j++) {
+                    title[j].classList.remove("active")
+                }
+                title[this.activeIndex].classList.add("active")
+                img = document.querySelector(".active img");
+                src = img.src;
+            }
+        },
+    })
+    title.forEach((item, index) => {
+        item.onclick = function() {
+            for (var i = 0; i < title.length; i++) {
+                title[i].classList.remove("active")
+            }
+            this.classList.add("active")
+            mySwiper.setTransition(1000)
+            mySwiper.setTranslate(-index * 350)
+            img = document.querySelector(".active img");
+            src = img.src
+        }
+    })
+    picBox.onmousemove = function(ev) {
+        bigImg.style.display = "block";
+        bigImg.src = src
+        mask.style.display = "block";
+        let Event = ev || window.event;
+        let l = Event.clientX - picBox.offsetLeft - mask.clientWidth / 2,
+            t = Event.clientY - picBox.offsetTop - mask.clientHeight / 2;
+        if (l < 0) {
+            l = 0;
+        } else if (l > picBox.clientWidth - mask.clientWidth) {
+            l = picBox.clientWidth - mask.clientWidth
+        }
+        if (t < 0) {
+            t = 0
+        } else if (t > picBox.clientHeight - mask.clientHeight) {
+            t = picBox.clientHeight - mask.clientHeight
+        }
+
+        mask.style.left = l + "px";
+        mask.style.top = t + "px"
+        var scale = {
+            x: l / (picBox.clientWidth - mask.clientWidth),
+            y: t / (picBox.clientHeight - mask.clientHeight)
+        }
+        bigImg.style.left = -(bigImg.clientWidth - big.clientWidth) * scale.x + "px";
+        bigImg.style.top = -(bigImg.clientHeight - big.clientHeight) * scale.y + "px"
+    }
+    picBox.onmouseout = function() {
+        bigImg.style.display = "none";
+        mask.style.display = "none";
+    }
+</script>
+
+</html>

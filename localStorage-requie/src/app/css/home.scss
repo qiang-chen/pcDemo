@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.box{
+    width: 300px;
+    margin: 200px auto;
+    text-align: center;
+    .one{
+        height: 30px;
+        margin-top: 20px;
+    }
+    button{
+        margin-top: 30px;
+    }
+}

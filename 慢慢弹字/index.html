@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            margin: 150px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <script>
+        let box=document.querySelector(".box");
+        let str="一个一个的给我蹦跶出来吧";
+        let count=0;
+        let timer=setInterval(function(){
+            count++;
+            let arr=str.substr(0,count);
+            box.innerHTML=arr;
+            if(count==str.length){
+                clearInterval(timer)
+            }
+        },1000)
+    </script>
+</body>
+</html>

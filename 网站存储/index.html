@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        网站名:<input class="nn" type="text" name="name"/>
+        网址: <input class="zz" type="text">
+        <input type="button" value="新增记录" id="btn">
+    </form>
+</body>
+<script>
+    var nn=document.querySelector(".nn");
+    var zz=document.querySelector(".zz");
+    //声明一个空数组 把所需要的本地储存放在这个数组中 因为不确定之前是否有东西存在
+    var arr=[];
+    btn.onclick=function(){
+        var name=nn.value;
+        var value=zz.value;
+        var content={
+            "name":name,
+            "user":value
+        };
+        localStorage.setItem("cc",JSON.stringify(content));
+        var a=localStorage.getItem("cc");
+        arr.push(content);
+        arr.map((item,index)=>{
+            console.log(item,index)
+        })
+    }
+</script>
+</html>

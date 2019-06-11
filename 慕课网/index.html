@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1><img src="img/logo.png" alt=""></h1>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="#">免费课程</a></li>
+                <li><a href="#">实战课程</a></li>
+                <li><a href="#">就业班</a></li>
+                <li><a href="#">专栏</a></li>
+                <li><a href="#">猿问</a></li>
+                <li><a href="#">手记</a></li>
+            </ul>
+        </div>
+        <div class="seach">
+            <input type="text">
+            <span class="iconfont icon-fangdajing"></span>
+        </div>
+        <div class="top-right">
+            <ul>
+                <li><a href="#">分享赚学费</a></li>
+                <li><a href="#">下载APP</a></li>
+                <li><a href="#"><span class="iconfont icon-gouwuche"></span>购物车</a></li>
+                <li><span>登录</span>/<span>注册</span></li>
+            </ul>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="banner-left">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span>前沿 / 区块链 / 人工智能</span>
+                        <i class="iconfont icon-triangle-right"></i>
+                    </a>
+                    <div class="two">
+                        <div class="twoone">
+                            <p>前沿技术</p>
+                        </div>
+                        
+                        <div class="twotwo">
+                            <span>微服务</span><span>区块链</span><span>以太坊</span><span>人工智能</span><span>机器学习</span><span>计算机视觉</span><span>自然语言处理</span><span>数据分析&分析</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>前端 / 小程序 / JS</span>
+                        <i class="iconfont icon-triangle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>后端 / JAVA / Python</span>
+                        <i class="iconfont icon-triangle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>移动 / Android / iOS</span>
+                        <i class="iconfont icon-triangle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>云计算 / 大数据 / 容器</span>
+                        <i class="iconfont icon-triangle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>运维 / 测试 / 数据库</span>
+                        <i class="iconfont icon-triangle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>UI设计 / 3D动画 / 游戏</span>
+                        <i class="iconfont icon-triangle-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="banner-right">
+            <div class="swiper-container demo">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/b1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/b2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/b3.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/b4.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/b5.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/b6.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="banner-bottom">
+                <dl>
+                    <dt><i></i></dt>
+                    <dd>
+                        <p>Web前端攻城狮</p>
+                        <p>互联网时代最火爆的技术</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><i></i></dt>
+                    <dd>
+                        <p>Java攻城狮</p>
+                        <p>综合就业排名第一</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><i></i></dt>
+                    <dd>
+                        <p>Android攻城狮</p>
+                        <p>移动设备市场份额第一</p>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><i></i></dt>
+                    <dd>
+                        <p>PHP攻城狮</p>
+                        <p>世界上最好的语言</p>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main-top">
+            <h2>实战推荐</h2>
+            <div class=""></div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script>
+        var mySwiper = new Swiper(".demo", {
+            autoplay: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true, //点击小点使用
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+require.config({
+    paths:{
+        'home':'./app/js/home',
+        'css':'./app/libs/css.min',
+        'Login':'./app/js/Login',
+        'home1':'./app/js/home1',
+        'Re':'./app/js/Re'
+    },
+    shim:{
+        'home':{
+            exports:[],
+            deps:['css!../src/app/css/home.css']
+        },
+        'home1':{
+            exports:[],
+            deps:['css!../src/app/css/Re.css']
+        }
+    }
+})

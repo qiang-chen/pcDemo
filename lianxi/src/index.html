@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./app/libs/swiper.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 500px;
+            margin: 150px auto;
+            border: solid 1px;
+        }
+
+        .tab {
+            width: 100%;
+            display: flex;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        span {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        span.active {
+            background: pink;
+        }
+
+        .swiper-container {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .swiper-container img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .main {
+            width: 90%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        dl {
+            float: left;
+            margin: 10px;
+        }
+        dl img{
+            width: 200px;
+            height: 200px;
+        }
+        .load{
+            text-align: center;
+        }
+        .load span{
+            width: 15px;
+            height: 50px;
+            border-radius: 15px;
+            background: orange;
+            display: inline-block;
+            margin: 10px;
+        }
+        .load span:nth-child(1){
+            animation: style1 1s linear 0s infinite;
+        }
+        @keyframes style1{
+            from{
+                transform:scale(1.2)
+            }
+            50%{
+                transform:scale(1)
+            }
+            to{
+                transform:scale(0.8)
+            }
+        }
+        .load span:nth-child(2){
+            animation: style2 1s linear 0s infinite;
+        }
+        @keyframes style2{
+            from{
+                transform:scale(0.8)
+            }
+            50%{
+                transform:scale(1)
+            }
+            to{
+                transform:scale(1.2)
+            }
+        }
+        .load span:nth-child(3){
+            animation: style3 1s linear 0s infinite;
+        }
+        @keyframes style3{
+            from{
+                transform:scale(1.2)
+            }
+            50%{
+                transform:scale(1)
+            }
+            to{
+                transform:scale(0.8)
+            }
+        }
+        .load span:nth-child(4){
+            animation: style4 1s linear 0s infinite;
+        }
+        @keyframes style4{
+            from{
+                transform:scale(0.8)
+            }
+            50%{
+                transform:scale(1)
+            }
+            to{
+                transform:scale(1.2)
+            }
+        }
+        .left{
+            width: 50px;
+            position: fixed;
+            right: 0;
+            background: #000;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.5;
+        }
+        .left span{
+            width: 50px;
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+        }
+        .left span.active{
+            background: pink;
+        }
+        .search{
+            text-align: center;
+            margin-top: 10px;
+            background: pink;
+            height: 50px;
+            line-height: 50px;
+            width: 100%;
+            
+        }
+        input{
+            width: 300px;
+            height: 30px;
+            padding-left: 10px; 
+        }
+        .fixed{
+            text-align: center;
+            margin-top: 10px;
+            background: pink;
+            height: 50px;
+            line-height: 50px;
+            width: 100%;
+            transition: all 1s linear;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 0;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search">
+        <input type="text" placeholder="请查找地名">
+    </div>
+    <div class="box">
+        <div class="tab">
+            <span class="active">tab1</span>
+            <span>tab2</span>
+            <span>tab3</span>
+            <span>tab4</span>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./app/img/1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./app/img/2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./app/img/3.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./app/img/4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <dl>
+            <dt><img src="./app/img/1.jpg" alt=""></dt>
+            <dd>5555</dd>
+        </dl>
+        <dl>
+            <dt><img src="./app/img/2.jpg" alt=""></dt>
+            <dd>5555</dd>
+        </dl>
+        <dl>
+            <dt><img src="./app/img/3.jpg" alt=""></dt>
+            <dd>5555</dd>
+        </dl>
+        <dl>
+            <dt><img src="./app/img/4.jpg" alt=""></dt>
+            <dd>5555</dd>
+        </dl>
+        <dl>
+            <dt><img src="./app/img/5.jpg" alt=""></dt>
+            <dd>5555</dd>
+        </dl>
+        <dl>
+            <dt><img src="./app/img/7.jpg" alt=""></dt>
+            <dd>5555</dd>
+        </dl>
+    </div>
+    <!-- <div class="load">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div> -->
+    <div class="left">
+        <span class="active">1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </div>
+    <script src="./app/libs/require.js"></script>
+    <script>
+        require(['./main.js'], function () {
+            require(['index'], function (index) {
+
+            })
+        })
+    </script>
+</body>
+
+</html>

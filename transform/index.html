@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            margin: 150px auto;
+            border: solid 1px;
+         /* transition: all 1s linear; */
+          /* transition: all 1s ease-out; */
+          animation: boxStyle 2s linear 0s infinite;
+        }
+        /* @keyframes boxStyle{
+            from{
+
+            }
+            to{
+                border-radius: 50%;
+            }
+        } */
+        @keyframes boxStyle{
+            10%{
+                background: pink;
+            }
+            50%{
+                background: green;
+            }
+            100%{  
+                background: red;
+                border-radius: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        
+    </div>
+</body>
+</html>

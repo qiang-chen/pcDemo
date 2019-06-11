@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1、输出一个真的值
+        //filter高阶函数的删选
+
+        //2、使用两种方式创建数组
+        let arr = new Array();
+        let str = [];
+        console.log(arr, str)
+
+        //3、写出数组的五个方法名
+        let arr1 = [1, 2];
+        arr1.push() //尾部增加
+        arr1.pop() //尾部删除
+        arr1.unshift() //头部增加
+        arr1.shift() //头部删除
+        arr1.splice() //万能删除法
+
+        //4、随机是个数字放在数组中 范围是50-150
+        let arr2 = [];
+
+        function random(min, max) {
+            return Math.floor(Math.random() * (max + 1) + min)
+        }
+        for (let i = 0; i < 10; i++) {
+            arr2.push(random(50, 150))
+        }
+        console.log(arr2)
+
+        //5、写一个函数 两个数字相加的功能
+        function sum(a, b) {
+            return a + b
+        }
+        console.log(sum(6, 5))
+
+        //6、函数的功能是对一堆数字进行相加
+        function sum1(...a) {
+            let sum2 = 0;
+            a.forEach(item => {
+                sum2 += item;
+            });
+            console.log(sum2)
+        }
+        sum1(1, 2, 3, 4)
+        //对函数的理解
+        //将重复代码多次使用 使代码更加规范 封装好功能块方便他人的调用使用
+        //使用两种方式创建一个dog对象
+        let opj = {};
+        let opt = new Object();
+        console.log(opj, opt);
+        //7、对象的理解
+        //万物皆对象 任何事物都可以当做对象去处理
+
+        //8、学过的对象
+        //json对象  面向对象  普通对象 
+
+        //9、原型链的作用
+        //一切函数的源头都是object 根据原型链可以查找到每个函数的原型
+
+        //10、前端理解
+        //将UI的设计用网页的形式呈现给用户展示 并通过各种用户的需求与后端进行交接已得到客户满意
+
+        //11、使用浏览器打开页面时认为浏览器做了什么
+        //浏览器充当了一个载体的作用将前端写的代码一图文的形式展示给用户观看
+
+        //12、对DOM的理解
+        //  DOM元素是一种html的结构组成 通过对DOM元素的操作可以达到我们想要的一些效果 但是频繁操作DOM元素是非常耗性能的
+
+        //13、DOM的是个方法名称
+        //nextElementSibling下一个兄弟元素  previousElementSibling上一个兄弟元素  parentNode 父元素 children 子元素  nextSibling下一个文本节点  previousSibling上一个文本节点  appendChild  添加元素  insertBefore 在某个元素之前添加  document.creatElement  创建元素  removeChild 删除元素  cloneNode克隆
+
+        //14、学好编程最重要的是  动力 兴趣
+
+        //15、孝心  责任心
+
+        //16、遇事冲动 容易以自我为中心
+
+        //17、是
+    </script>
+</body>
+
+</html>

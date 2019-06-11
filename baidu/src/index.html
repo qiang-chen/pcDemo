@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./app/css/index.css">
+</head>
+
+<body style="height: 2000px;">
+    <div class="top">
+        <header>
+            <ul>
+                <li>
+                    <a href="#">新闻</a>
+                </li>
+                <li>
+                    <a href="#">hao123</a>
+                </li>
+                <li>
+                    <a href="#">地图</a>
+                </li>
+                <li>
+                    <a href="#">视频</a>
+                </li>
+                <li>
+                    <a href="#">贴吧</a>
+                </li>
+                <li>
+                    <a href="#">学术</a>
+                </li>
+                <li>
+                    <a href="#">登录</a>
+                </li>
+                <li>
+                    <a href="#">设置</a>
+                </li>
+                <li>
+                    <a href="#">更多产品</a>
+                </li>
+            </ul>
+        </header>
+    </div>
+
+    <div class="logo">
+        <img src="./app/img/bd_logo1 (2).png" alt="">
+    </div>
+    <div class="zhanwei">
+        <div class="form">
+        <div class="s">
+            <input type="text" class="user"><button>百度一下</button>
+            <i class="btnCamera"></i>
+            <span class="camera"></span>
+            <div class="select">
+                <p>51515165161616</p>
+            </div>
+            <div class="select-img">
+                <div class="select-img-main">
+                    <p>拖拽图片到这里</p>
+                    <p><b>+</b></p>
+                </div>
+                <div class="select-img-add">
+                    <span class="t">本地上传图片</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <div class="main">
+        <div class="main-title">
+            <ul>
+                <li>我的关注</li>
+                <li>推荐</li>
+                <li>导航</li>
+            </ul>
+        </div>
+    </div>
+    <script src="./app/libs/require.js"></script>
+    <script>
+        require(['./main.js'], function () {
+            require(['index'], function (index) {
+                new index();
+            })
+        })
+    </script>
+</body>
+
+</html>

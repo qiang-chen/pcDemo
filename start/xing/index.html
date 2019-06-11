@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            background: #353232;
+            opacity: 0.2;
+        }
+
+        .top {
+            width: 100%;
+            height: 30px;
+        }
+
+        .box {
+            position: absolute;
+            top: 0;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+
+    </div>
+</body>
+<script>
+    let count = 0;
+    let arr = [];
+
+    function random(min, max) {
+        return Math.floor(Math.random() * (max - min+ 1)+ min)
+    }
+
+    function creat() {
+        let speed = 0;
+        let num = random(25, 130);
+        let oDiv = document.createElement("div");
+        oDiv.classList.add("box");
+        oDiv.innerHTML = `<img src="./img/xingxing.gif" alt="">`;
+        oDiv.style.width = num + "px";
+        oDiv.style.height = num + "px";
+        let place = random(0, window.innerWidth);
+        oDiv.style.left = place + "px";
+        const container = document.querySelector(".top");
+        container.appendChild(oDiv);
+        let timer=setInterval(function () {
+            if (speed < window.innerHeight) {
+                oDiv.style.top = speed + "px";
+                speed += 5;
+            } else {
+                container.removeChild(oDiv);
+                clearInterval(timer)
+            }
+        }, 180)
+    }
+    setInterval(function () {
+        creat();
+    }, 300)
+</script>
+
+</html>

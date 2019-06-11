@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 500px;
+            height: 250px;
+            border: solid 1px;
+            margin: 150px auto;
+            text-align: center;
+        }
+        .one{
+            height: 40px;
+        }
+        .one:nth-child(2){
+            margin: 46px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>欢迎来到注册页面</h1>
+        <div class="one">
+            用户名 :<input type="text" class="user">
+        </div>
+        <div class="one">
+            密码 :<input type="text" class="pwd">
+        </div>
+        <button>注册</button>
+    </div>
+    <script src="./app/libs/require.js"></script>
+    <script>
+        require(['./main.js'],function(){
+            require(['home1'],function(home1){
+
+            })
+        })
+    </script>
+</body>
+
+</html>

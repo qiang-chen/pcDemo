@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../js/jquery11.js"></script>
+    <script>
+        // $.ajax({
+        //     url:'./data.json',
+        //     success:function(rs){
+        //         let [a,b,c="666",f,g,e=999]=rs;
+        //         //console.log(c)
+        //     }
+        // })
+
+
+        // let fn=(a=88,b=77,c=66)=>{
+        //     //console.log(a,b,c,d)
+        //     var d=55;
+        // }
+
+        // fn(1,2)
+        // const a=44;
+        // a=98;
+        
+        // console.log(a)
+
+        // let a=[1,2,3]
+        // console.log(...a)
+
+        // function show(...a){
+        //     console.log(a)
+        // }
+
+        // show(1,2,3)
+
+        function show(...a){
+            //let a=Array.prototype.slice.call(arguments)
+            return a.sort()
+        }
+
+        //console.log(show(5,3,1))
+
+        function show(a,b,c){
+            console.log(a,b,c);
+        }
+        show(...[1,9,8]);
+    </script>
+</body>
+</html>

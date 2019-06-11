@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./app/css/addr.css">
+</head>
+
+<body>
+    <div class="title">
+        <div class="wrap">
+            <div class="select">
+                <span>按省份选择:</span>
+                <select name="" id="" class="province">
+                    <option value="">省份</option>
+                </select>
+                <select name="" id="" class="city">
+                    <option value="">城市</option>
+                </select>
+            </div>
+            <div class="search">
+                <span>直接搜索:</span>
+                <input type="text" placeholder="请输入城市中文或拼音">
+                <div class="search-select">
+                    <i></i>
+                    <!-- <a href="#" class="add"></a> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="title-hot">
+        <div class="wrap">
+            <span>热门城市：</span>
+            <a href="#">北京</a>
+            <a href="#">上海</a>
+            <a href="#">济南</a>
+            <a href="#">苏州</a>
+            <a href="#">杭州</a>
+        </div>
+    </div>
+    <div class="title-hot visit">
+        <div class="wrap">
+            <div class="f">
+                <span>最近访问：</span>
+                <div class="a"></div>
+             <!-- <a href="#">ddd</a>
+            <a href="#">ddd</a>
+            <a href="#">ddd</a>
+            <a href="#">ddd</a>
+            <a href="#">ddd</a> -->
+            </div>
+           
+        </div>
+    </div>
+    <div class="main">
+        <div class="wrap">
+            <div class="main-title">
+                <!-- <span>按拼音首字母选择：</span>
+                <a href="#">a</a>
+                <a href="#">a</a>
+                <a href="#">a</a>
+                <a href="#">a</a> -->
+            </div>
+            <div class="main-count">
+                <!-- <div class="main-list">
+                    <span>A</span>
+                    <span>
+                        <a href="#">sss</a>
+                        <a href="#">sss</a>
+                        <a href="#">sss</a>
+                        <a href="#">sss</a>
+                        <a href="#">sss</a>
+                        <a href="#">sss</a>
+                        <a href="#">sss</a>
+                        <a href="#">sss</a>
+                    </span>
+                </div> -->
+            </div>
+
+        </div>
+    </div>
+     <div class="load">
+       <!-- <img src="./app/img/load.gif" alt=""> -->
+    </div>
+    <script src="./app/libs/require.js"></script>
+    <script>
+        require(['./main.js'], function () {
+            require(['addr'], function (addr) {
+
+            })
+        })
+    </script>
+</body>
+
+</html>

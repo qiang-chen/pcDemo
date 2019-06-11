@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 100%;
+            height: 400px;
+            padding: 200px;
+        }
+        dt{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: pink;
+            margin-bottom: 20px;
+        }
+        dl{
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            float: left;
+            margin: 0 20px;
+        }
+        input{
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <div class="box">
+        <dl>
+            <dt></dt>
+            <dd>ssss</dd>
+        </dl>
+    </div>
+    <script src="../../js/jquery11.js"></script>
+    <script>
+
+        function search(data){
+            let arr=[];
+            $("input").on("input",function(){
+                let user=$("input").val();
+                data.map(item=>{
+                    console.log(item.title,user)
+                    if(item.title.includes(user)){
+                        arr.push(item);
+                        render(arr)
+                    }
+                })
+            })
+        }
+        function render(data){
+            //console.log(data)
+            let str="";
+            str=data.map(item=>{
+                return `<dl>
+            <dt style="background:${item.color}"></dt>
+            <dd>${item.title}</dd>
+        </dl>`
+            }).join("");
+            $(".box").html(str)
+        }
+
+        $.ajax({
+            url:'./js/data.json',
+            success:(rs)=>{
+                render(rs)
+                search(rs)
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: #000;
+}
+
+html {
+  background: #ccc;
+}
+
+.top {
+  width: 96%;
+  height: 45px;
+  line-height: 45px;
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 0 30px;
+}
+
+.top .top-left {
+  float: left;
+}
+
+.top .top-left span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  display: inline-block;
+  background: #fff;
+}
+
+.top ul {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.top ul li {
+  float: left;
+  margin: 0 10px;
+  color: #ccc;
+}
+
+.top .top-right {
+  float: right;
+}
+
+.top .top-right span {
+  color: #ccc;
+  margin: 0 8px;
+}
+
+.nav {
+  width: 100%;
+  background: #fff;
+  height: 90px;
+  line-height: 90px;
+  background: #fff;
+  position: relative;
+}
+
+.nav ul {
+  float: left;
+}
+
+.nav ul li {
+  float: left;
+  margin: 0 8px;
+}
+
+.nav ul li a:hover {
+  color: skyblue;
+}
+
+.nav .nav-right {
+  float: right;
+  position: relative;
+}
+
+.nav .nav-right input {
+  height: 20px;
+  width: 300px;
+  line-height: 20px;
+}
+
+.nav .nav-right i {
+  position: absolute;
+  top: 5px;
+  left: 6px;
+}
+
+.nav .nav-right span {
+  height: 15px;
+  line-height: 15px;
+  padding: 1px 10px;
+  position: absolute;
+  border-radius: 10px;
+  border: 1px solid blue;
+  top: 38px;
+  right: 7px;
+  font-size: 12px;
+  background: skyblue;
+}
+
+.nav .ulselect {
+  width: 100%;
+  height: 0px;
+  background: pink;
+  position: absolute;
+  top: 90px;
+  left: 0;
+  z-index: 22;
+  transition: all 1s ease-out;
+}
+
+.wrap {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.banner {
+  position: relative;
+  margin-top: 20px;
+}
+
+.banner ul li {
+  display: none;
+}
+
+.banner ul li img {
+  width: 1218px;
+  height: 553px;
+}
+
+.banner ul li:nth-of-type(1) {
+  display: block;
+}
+
+.banner ol {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.banner ol li {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin: 0 10px;
+  border-radius: 50%;
+  background: #999;
+}
+
+.banner ol li.active {
+  background: red;
+}
+
+.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 66;
+}
+
+.main {
+  margin-top: 20px;
+  width: 100%;
+}

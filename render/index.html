@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- <p><img src="./img/s-h1.jpg" alt=""></p>
+        <p></p> -->
+    </div>
+    <script src="./libs/jquery.min.js"></script>
+    <script src="./libs/mock-min.js"></script>
+    <script>
+        const box = document.querySelector(".box");
+        //task1
+        // $.ajax({
+        //     url: './data.json'
+        // }).then(function (res) {
+        //     let str=res.map(item => {
+        //         return `<p><img src="./img/${item.img}" alt=""></p>
+        //                    <p>${item.title}</p>`
+        //     }).join("");
+        //     box.innerHTML=str;
+        // })
+
+
+        //task2
+        //创造随机数据
+        let arr=["s-h1.jpg","s-h2.jpg"];
+            let user=[];
+        user.push(Mock.mock({
+            'img|1':arr,
+            word:Mock.Random.cword(5)
+        }));
+        //设置接口
+        Mock.mock("/api.test/",function(){
+            return user
+        });
+
+        $.ajax({
+            url: '/api.test/'
+        }).then(function (res) {
+           let data=JSON.parse(res);
+           console.log(data)
+           let str=data.map(item => {
+                return `<p><img src="./img/${item.img}" alt=""></p>
+                           <p>${item.word}</p>`
+            }).join("");
+            box.innerHTML=str;
+        })
+    </script>
+</body>
+
+</html>

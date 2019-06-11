@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            background: #000;
+            position: relative;
+            margin: 50px auto;
+        }
+        .round{
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            background-color: green;
+            border-radius: 50%;
+        }
+        .box .head{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+<script>
+    const Snake=function(){
+        //初始化小蛇位置
+        this.arr=[{x:0,y:0},{x:0,y:20},{x:0,y:40},{x:0,y:60},{x:0,y:80},{x:0,y:100}];
+        this.box=document.querySelector(".box");
+        this.timer=null;
+        this.dire="down";
+        this.init()
+    }
+    Snake.prototype={
+        constructor:Snake,
+        init(){
+            this.mouse();
+            this.creat();
+            this.run()
+        },
+        creat(){
+            //创建初始化小蛇
+            let flag=document.createDocumentFragment();//创建文档碎片
+            for(let i=0;i<this.arr.length;i++){
+                //创建小蛇标签
+                let round=document.createElement("i");
+                //给小蛇标签取个名字
+                round.className=i==this.arr.length-1?"round head":"round";
+                //确定小蛇位置
+                round.style.left=this.arr[i].x+"px";
+                round.style.top=this.arr[i].y+"px";
+                flag.appendChild(round);
+            }
+            this.box.appendChild(flag)
+        },
+        move(){
+            let newArr=this.arr,
+            len=newArr.length,
+            head=newArr[len-1];
+            for(let i=0;i<len;i++){
+                if(i==len-1){
+                    //证明是头部
+                    if(this.dire=="down"){
+                        head.y+=20;
+                    }else if(this.dire=="up"){
+                        head.y-=20;
+                    }else if(this.dire=="right"){
+                        head.x+=20
+                    }else if(this.dire=="right"){
+                        head.x-=20
+                    }
+                }else{
+                    newArr[i].x=newArr[i+1].x;
+                    newArr[i].y=newArr[i+1].y;
+                }
+            }
+            //创建完新的位置后先调用删除函数删除老蛇后在调用创建函数创建新的小蛇
+            this.removeSnake();
+            this.creat();
+        },
+        removeSnake(){
+            //当蛇每次运动的时候要把以前那条老蛇删除掉 然后根据move函数创建新坐标重新创建新的小蛇
+            let bodys=document.querySelectorAll(".round");
+            while(bodys.length>0){
+                bodys[0].remove()
+            }
+        },
+        run(){
+            console.log("动起来")
+            //通过定时器调用move移动函数让小蛇动起来;
+            this.timer=setInterval(()=>{
+                this.move()
+            },5000)
+        },
+        mouse(){
+            //判断键盘按下执行什么方向移动
+            document.onkeydown=(ev)=>{
+                let e=ev||window.event;
+                switch(e.keyCode){
+                    case 37:
+                    if(this.dire!="left"&&this.dire!="right"){
+                        this.dire="left";
+                    };
+                    break;
+                    case 38:
+                    if(this.dire!="up"&&this.dire!="down"){
+                        this.dire="up";
+                    };
+                    break;
+                    case 39:
+                    if(this.dire!="left"&&this.dire!="right"){
+                        this.dire="right";
+                    };
+                    break;
+                    case 40:
+                    if(this.dire!="up"&&this.dire!="down"){
+                        this.dire="down";
+                    };
+                    break;
+                }
+            }
+        }
+    }
+
+    new Snake()
+</script>
+</html>

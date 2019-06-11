@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 500px;
+            height: 200px;
+            margin: 200px auto 0;
+            text-align: center;
+        }
+        input{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        用户名: <input type="text" class="user"><br>
+        密码: <input type="text" class="pwd"><br>
+        <button class="btn">登录</button>
+    </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/mock.js"></script>
+    <script>
+        let str=[
+            {
+                user:"js",
+                pwd:"111"
+            },{
+                user:"jquery",
+                pwd:"222"
+            },{
+                user:"node",
+                pwd:"333"
+            },{
+                user:"vul",
+                pwd:"444"
+            },{
+                user:"html",
+                pwd:"555"
+            },{
+                user:"css",
+                pwd:"666"
+            }
+        ]
+        let user=document.querySelector(".user");
+        let pwd=document.querySelector(".pwd");
+        //点击按钮的时候调用ajax
+        let btn=document.querySelector(".btn");
+        btn.onclick=function(){
+            $.ajax({
+                url:'/api/login',//接口地址
+                type:'post',//必须设的
+                dataType:"json",//必须设的
+                data:{//传的参数
+                    user:user.value,
+                    pwd:pwd.value
+                },
+                success:function(rs){
+                    //后台验证成功的时候的返回数据
+                    //console.log(rs)
+                    if(rs.code==0){
+                        alert("88")
+                    }
+                }
+            })
+        }
+
+        //模拟后台逻辑
+        Mock.mock('/api/login',function(res){
+            //第一个参数是设置的接口
+            //想要得到用resbody
+            //此时得到是user=chen&pwd=123这种格式
+            //需要得到一种{"user":"chen","pwd":"123"}这种格式 所以需要封装一个函数
+            //调用转换格式函数
+            //es6的结构赋值
+            let {user,pwd}=format(res.body);
+            //把前端传过来的这个参数和数据库中的进行匹配
+            let flag=str.map(function(item){
+                if(item.user==user&&item.pwd==pwd){
+                    //如果前端把用户输入传过来的值传过来后和数据库的值比较后有相同的就给前端返回一个值code让前端知道用户输入的是正确的从而做一些操作
+                    //需要注意的点是此时return的这个map函数 要整个变量在外面继续return
+                    return {
+                        code:0,
+                        msg:'success'
+                    }
+                }
+            });
+            //注意此时的flag有可能是[undefined,undefined,{5555},undefined]这种格式 我们需要获取中间有内容的一项 换句话说也是匹配成功的哪一项
+            for(var i=0;i<flag.length;i++){
+                if(flag[i]){
+                    return flag[i]//这个变量return出来后可以再ajax的success中获取到
+                }
+            }
+            
+        })
+
+        //转换格式的封装函数
+        function format(str){
+            return JSON.parse('{"'+str.replace(/\&/g,'","').replace(/\=/g,'":"')+'"}')
+        }
+    </script>
+</body>
+</html>

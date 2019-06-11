@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.box {
+  width: 600px;
+  border: solid 1px;
+  margin: 50px auto 0;
+}
+
+.box .top {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.box dl {
+  flex: 1;
+  width: 200px;
+  text-align: center;
+}
+
+.box dl img {
+  width: 200px;
+  height: auto;
+}
+
+.box dl p:nth-child(1) {
+  width: 150px;
+  height: 40px;
+  display: inline-block;
+  margin-top: -15px;
+  line-height: 40px;
+  color: #fff;
+  background: red;
+}
+
+.box dl p:nth-child(2) {
+  height: 30px;
+  line-height: 30px;
+  margin-top: 20px;
+}
+
+.box dl p:nth-child(2) span:nth-child(1) {
+  float: left;
+  margin-left: 20px;
+  color: red;
+  font-size: 20px;
+}
+
+.box dl p:nth-child(2) span:nth-child(2) {
+  float: right;
+  margin-right: 20px;
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.box dl p:nth-child(3) {
+  margin-top: 20px;
+}
+
+.box .bottom {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+}
+
+.box .bottom .bottom-one {
+  float: right;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.box .bottom ul {
+  float: left;
+}
+
+.box .bottom ul li {
+  float: left;
+}
+
+.box .bottom p {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  float: left;
+}
+
+.box .bottom .samll {
+  float: left;
+  width: 50px;
+  margin: 0 10px;
+}
+
+.box .bottom li {
+  margin: 0 10px;
+  padding: 0 8px;
+}
+
+.box .bottom li.active {
+  background: red;
+}

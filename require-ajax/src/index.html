@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{-moz-user-select: none; /*火狐*/-webkit-user-select: none; /*webkit浏览器*/-ms-user-select: none; /*IE10*/-khtml-user-select: none; /*早期浏览器*/user-select: none;}
+    </style>
+</head>
+<body>
+    <div>dscdcdzc</div>
+    <script src="./app/libs/require.js"></script>
+    <script>
+        require(['./main.js'],function(){
+            require(['home'],function(home){
+                
+            })
+        })
+    </script>
+</body>
+</html>

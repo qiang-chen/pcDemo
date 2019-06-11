@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background: pink;
+            left: 0;
+            top: 0;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background: red;
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+<script>
+    class Drag{
+        constructor(tag){
+            this.box=document.querySelector(tag);
+            this.disX=0;
+            this.disY=0;
+            this.init()
+        }
+        init(){
+            this.mouse()
+        }
+        mouse(){
+            this.box.onmousedown=(ev)=>{
+                let e=ev||window.event;
+                this.disX=e.clientX-this.box.offsetLeft;
+                this.disY=e.clientY-this.box.offsetTop;
+                //console.log(disX,disY);
+                document.onmousemove=this.move.bind(this);//改变指向3【【-=-
+                document.onmouseup=this.up;
+                return false;
+            }
+        }
+        move(ev){
+            console.log(this)
+                this.box.style.left=ev.clientX-this.disX+"px";
+                this.box.style.top=ev.clientY-this.disY+"px";
+        }
+        up(){
+            document.onmousemove=null;
+            document.onmouseup=null;
+        }
+    }
+    class Child extends Drag{//继承Drag函数
+        //给这个Child限制范围但是还不能直接更改move函数 不然会覆盖了父级的 要调用一下在更改
+        move(ev){
+            let e=ev||event;
+            super.move(ev);
+            if(this.box.offsetTop<=0){
+                console.log(this.box.offsetTop)
+                this.box.style.top="0px";
+            }
+        }
+
+    }
+    new Drag(".box1");
+    new Child(".box2");
+</script>
+</html>

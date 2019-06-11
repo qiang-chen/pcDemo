@@ -1,0 +1,17 @@
+require.config({
+    paths:{
+        'home':'./app/js/home',
+        'css':"./app/libs/css.min",
+        'ajax':'./app/common/ajax',
+        'show':'./app/js/show',
+        'creatMock':'./app/js/creatMock',
+        'Mock':'./app/libs/mock-min',
+        'select':'./app/js/select'
+    },
+    shim:{
+        'home':{
+            exports:[],
+            deps:['css!../src/app/fonts/iconfont.css','css!../src/app/css/home.css']
+        }
+    }
+})

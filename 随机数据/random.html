@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="js/mock.js"></script>
+    <script>
+        var  Users = [];
+    for (let i = 0; i < 50; i++) {
+      Users.push(Mock.mock({
+        id: Mock.Random.guid(), // 随机id
+        name: Mock.Random.cname(), // 随机名字
+        addr: Mock.mock('@county(true)'), // 随机地名
+        'age|18-60': 1, // 年纪
+        birth: Mock.Random.date(), // 日期
+        sex: Mock.Random.integer(0, 1), // 性别
+      }));
+    }
+    console.log(Users, 'Users')
+    </script>
+</body>
+
+</html>

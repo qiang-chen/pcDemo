@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="user" class="user"><br>
+    <input type="possword" name="user" class="pwd"><br>
+    <button id="btn">登录</button>
+    <script>
+        var user=document.querySelector(".user");
+        var pwd=document.querySelector(".pwd");
+        var userLocal=null;
+        var pwdLocal=null;
+
+        var localStorage=window.localStorage;
+        btn.onclick=function(){
+            //点击的时候把这个用户名和密码存储到本地去
+            console.log(localStorage)
+            if(localStorage.length==0){
+                localStorage.setItem("user",user.value);
+            localStorage.setItem("pwd",pwd.value);
+            }else{
+                //否则里面有值了就获取他们
+                userLocal=localStorage.getItem("user");
+                pwdLocal=localStorage.getItem("pwd");
+                //获取了他们以后和下次输入的内容相比较 
+                //一样的跳转到产品页面  不一样的话跳转到本地页面
+                if(userLocal==user.value&&pwdLocal==pwd.value){
+                    window.location.href='chanpin.html'
+                }else{
+                    window.location.href='注册.html'
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

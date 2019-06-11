@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            /* 这个属性能够阻止字体变蓝 */
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        sdvfdbvsdzxv
+    </div>
+    <input name="test1" autocomplete="on">
+    <input type="date"><br><br>
+<input type="month"><br><br>
+<input type="week"><br><br>
+<input type="time"><br><br>
+<input type="datetime"><br><br>
+<input type="datetime-local">
+    <script>
+        //累计相加
+        // let arr=[1,2,3];
+        // let sum=arr.reduce((prev,cur)=>{
+        //     return prev+cur;
+        // })
+        // console.log(sum)//----6
+    //     //阶乘2的2次方的3次方
+    //     let arr=[2,2,3];
+    //     let sum=arr.reduce((prev,cur)=>{
+    //         return Math.pow(prev,cur);
+    //     })
+    //     console.log(sum)//-----64
+    //    //阶乘2的2次方的3次方  es6方法
+    //     let arr=[2,2,3];
+    //     let sum=arr.reduce((prev,cur)=>{
+    //         return prev**cur;
+    //     })
+    //     console.log(sum)//-----64
+
+        // let arr=["a","1",5,8,"l"];
+        // for(let i of arr.keys()){
+        //     console.log(i)//输出数组的每一项下标
+        // }
+        // let arr=["a","1",5,8,"l"];
+        // for(let i of arr.entries()){//for of万能循坏法
+        //     console.log(i)//输出数组的每一项下标和每一项
+        //     let [a,b]=i;//es6的结构赋值 
+        //     console.log(a,b)//a是数组的每一项下标 b是每一项
+        // }
+
+        // let arr=["a","1",{a:1},8,"l"];
+        // for(let i of arr){
+        //     console.log(i)
+        // }
+
+        // //查找数组中第一个符合条件的数
+        // let arr=[5,8,6,3];
+        // let a=arr.find((item,index,arr1)=>{//使用方法类似于高阶函数
+        //     return item>5
+        // });
+        // console.log(a)//----8 输出第一个满足条件的数
+
+        //数组的填充
+        // let arr=new Array(10);
+        // arr.fill("玉麟",1,5)//只写一个参数的话默认全部填充
+        // console.log(arr)//[empty, "玉麟", "玉麟", "玉麟", "玉麟", empty × 5]
+
+        // //数组的另一种查找 字符串也可以使用类似于字符串中indexOf
+        // let arr=[65,2,6,3,5,1];
+        // console.log(arr.includes(658))//返回布尔值
+
+        //三个点的使用情况
+        //第一种 类数组转数组
+           //let box=[...document.querySelectorAll(".box")];
+        //第二种把数组拆分开
+        // let arr=[1,2,3];
+        // console.log(...arr)//1 2 3
+        // //可以应用在函数传参方面
+        
+        // //第三种json数据拷贝
+        // let json=[{"a":"1"},{"b":"2"}];
+        // let newJson=[...json];
+        // json.push({"c":"3"})
+        // console.log(json,newJson)
+        // //个人觉得可以代替深拷贝 毕竟封装深拷贝太麻烦嘻嘻
+        </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+require.config({
+    baseUrl:'./app/js',
+    paths:{
+        'add':'./add',
+        'show':'./show',
+        'write':'./write',
+        'ajax':'./ajax',
+        'jquery':'../libs/jquery.min'
+    }
+})

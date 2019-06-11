@@ -1,0 +1,12 @@
+require.config({
+    paths:{
+        "glass":'./app/js/glass',
+        'css':'./app/libs/css.min'
+    },
+    shim:{
+        'glass':{
+            exports:[],
+            deps:['css!../src/app/css/index.css']
+        }
+    }
+})

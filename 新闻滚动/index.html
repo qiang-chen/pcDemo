@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 300px;
+            height: 30px;
+            border: solid 1px;
+            margin: 200px auto 0;
+            overflow: hidden;
+        }
+
+        p {
+            width: 100%;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="count1">
+            <p>1号标题</p>
+            <p>2号标题</p>
+            <p>3号标题</p>
+            <p>4号标题</p>
+            <p>5号标题</p>
+        </div>
+        <div class="count2">
+            <!-- 这个盒子放得内容和上面一样 目的是达到无缝滚动状态 -->
+        </div>
+    </div>
+    <script>
+        let box = document.querySelector(".box");
+        let count1 = document.querySelector(".count1");
+        let count2 = document.querySelector(".count2");
+        count2.innerHTML=count1.innerHTML;//将第一个盒子的内容原样复制给第二个盒子
+        setInterval(()=>{
+            box.scrollTop++; //在定时器中利用滚动scrollTop的增加达到滚动效果
+            if(box.scrollTop>=count1.offsetHeight){
+                //当超过第一个盒子高度的时候让scrollTop归零
+                box.scrollTop=0;
+            }
+        },80)
+    </script>
+</body>
+
+</html>

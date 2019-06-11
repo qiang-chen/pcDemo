@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+%juzhong {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid red;
+
+    h1 {
+        height: 60px;
+        @extend %juzhong;
+        font-size: 30px;
+    }
+}
+
+.container {
+    width: 80%;
+    margin: 10px auto 0;
+}
+
+.container-top {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #999;
+    margin-bottom: 20px;
+
+    h2 {
+        font-size: 24px;
+    }
+}
+
+.container-main {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 216px;
+    border: solid 1px #ccc;
+    padding: 15px;
+    margin: 10px;
+    height: 168px;
+    b{
+        display: none;
+    }
+}
+
+.box-top {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #666;
+
+    span {
+        margin-bottom: 6px;
+    }
+
+    span:nth-child(1) {
+        float: left;
+    }
+
+    span:nth-child(2) {
+        float: right;
+        height: 20px;
+        padding: 2px 10px;
+        background: #ccc;
+    }
+}
+
+.box-main {
+    width: 100%;
+
+    p {
+        height: 30px;
+        line-height: 30px;
+    }
+
+    p:nth-child(2),
+    p:nth-child(3),
+    p:nth-child(4) {
+        font-size: 12px;
+        color: #999;
+    }
+}
+
+.addBox {
+    width: 216px;
+    border: solid 1px #ccc;
+    padding: 15px;
+    margin-top: 10px;
+    height: 170px;
+    text-align: center;
+
+    p:nth-child(1) {
+        text-align: center;
+        line-height: 30px;
+        display: inline-block;
+        font-size: 100px;
+        color: #ccc;
+        margin-top: 39px;
+    }
+
+    p:nth-child(2) {
+        color: #999;
+    }
+}
+b{
+    cursor: pointer;
+}
+.mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .5)
+}
+
+.alert {
+    width: 330px;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    z-index: 2;
+
+    p {
+        width: 100%;
+        margin: 10px 0;
+        height: 34px;
+        line-height: 34px;
+
+        input {
+            width: 100%;
+            height: 30px;
+            box-sizing: border-box;
+            padding-left: 20px;
+        }
+    }
+    p.p{
+        display: flex;
+        select{
+            flex: 1;
+            text-align: center;
+        }
+    }
+    p.a{
+        display: flex;
+        select{
+            flex: 1;
+        }
+    }
+    p:last-child(){
+        display: flex;
+        button{
+            flex: 1;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body style="height: 2000px;">
+    <script src="./libs/jquery.min.js"></script>
+    <script>
+       
+          
+            var  t = 0;
+            $(window).scroll(function () {
+                let p = $(this).scrollTop();
+                if (t < p) {
+                    //下滚
+                    console.log("下滚")
+                } else {
+                    //上滚            
+                    console.log("上滚 ")
+                }
+                t = p;
+                // setTimeout(function () {//看到有人加了个异步 感觉不加也无所谓
+                //     t = p;
+                // }, 0)
+            })
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="icon" href="img/ban2.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <style>
+        .swiper-container{
+            width: 600px;
+            height: 300px;
+            margin-top: 100px;
+        }
+        .swiper-container img{
+            width: 100%;
+            height: 100%;
+        }
+        header{
+            width: 600px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            margin: 0 auto;
+            display: flex;
+            border: 1px solid;
+            cursor: pointer;
+        }
+        header div{
+            flex: 1;
+            /* 能让tap自动均分 */
+        }
+        .active{
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="active">1111</div>
+        <div>2222</div>
+        <div>3333</div>
+        <div>4444</div>
+    </header>
+    <div class="swiper-container demo">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="img/ban2.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/ban3.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/ban4.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/ban5.png" alt="">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <script src="js/swiper.min.js"></script>
+    <script>
+        var btn=document.querySelectorAll("header div");
+        var mySwiper=new Swiper(".demo",{
+            autoplay:true,//可选选项，自动滑动
+            // direction:"vertical", 加上这个就是竖着轮播 不加就是横着
+            //loop:true,
+            pagination:{
+                el:".swiper-pagination",
+                //type:'fraction',//把下面四个小点换成数字 格式是 当前页/总页数
+                //type:'progressbar',//顶部的进度条样式
+            },
+            navigation:{
+                //控制左右箭头切换轮播页 前面名字不能变
+                nextEl:'.swiper-button-next',
+                prevEl:'.swiper-button-prev',
+            },
+            effect:'cube',//翻转循坏
+            //effect:'fade', 淡入淡出循坏
+            //effect:'coverflow',
+            //slidesPerView:3,//折叠循坏
+            //centeredSlides:true,
+            on:{
+                slideChange:function(){
+                    //能得到当前循坏过来的页面下标
+                    console.log(this.activeIndex)
+                    var ii=this.activeIndex;
+                    btn.forEach((item,index)=>{
+                        //console.log(btn)
+                        if(index==ii){
+                            //console.log(index,ii)
+                            item.classList.add("active")
+                        }else{
+                            item.classList.remove("active")
+                        }
+                    })
+                }
+            }
+        })
+
+        // that.myswiper.setTransition(1000);
+        //         that.myswiper.setTranslate(-index * w);
+    </script>
+</body>
+
+</html>

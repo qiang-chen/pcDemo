@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.box{
+    display: flex;
+    padding: 20px;
+    .box-left{
+        flex: 4;
+        .search{
+            margin: 20px 0;
+            .two{
+                margin-left: 40px;
+                border: solid 2px;
+                width: 170px;
+                margin-top: 10px;
+                text-align: center;
+            }
+            button{
+                margin-top: 20px;
+            }
+        }
+    }
+    .box-right{
+        flex:6;
+        dl{
+            overflow: hidden;
+            width: 400px;
+            height: 200px;
+            margin-top: 20px;
+            dt{
+                float: left;
+                img{
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+            dd{
+                float: left;
+                width: 200px;
+                text-align: center;
+                height: 200px;
+                line-height: 200px;
+                p{
+                    width: 200px;
+                    height: 30px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+}

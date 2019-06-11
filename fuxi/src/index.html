@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .nav {
+            width: 100%;
+            height: 80px;
+            display: flex
+        }
+
+        span {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            width: 100%;
+        }
+
+        p {
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+        }
+        .load{
+            width: 100%;
+            text-align: center;
+            margin: 30px 0;
+        }
+        i{
+            width: 16px;
+            height: 60px;
+            border-radius: 12px;
+            display: inline-block;
+            background: orange;
+            margin: 0 10px;
+        }
+        i:nth-child(1){
+            animation: style1 1s linear 0s infinite;
+        }
+        @keyframes style1{
+            from{
+                transform: scale(1.2)
+            }
+            50%{
+                transform: scale(1)
+            }
+            to{
+                transform: scale(0.8)
+            }
+        }
+        i:nth-child(2){
+            animation: style2 1s linear 0s infinite;
+        }
+        @keyframes style2{
+            from{
+                transform: scale(0.8)
+            }
+            50%{
+                transform: scale(1)
+            }
+            to{
+                transform: scale(1.2)
+            }
+        }
+        i:nth-child(3){
+            animation: style3 1s linear 0s infinite;
+        }
+        @keyframes style3{
+            from{
+                transform: scale(1.2)
+            }
+            50%{
+                transform: scale(1)
+            }
+            to{
+                transform: scale(0.8)
+            }
+        }
+        i:nth-child(4){
+            animation: style4 1s linear 0s infinite;
+        }
+        @keyframes style4{
+            from{
+                transform: scale(0.8)
+            }
+            50%{
+                transform: scale(1)
+            }
+            to{
+                transform: scale(1.2)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="nav">
+            <span>11</span>
+            <span>11</span>
+            <span>11</span>
+            <span>11</span>
+            <span>11</span>
+            <span>11</span>
+            <span>11</span>
+            <span>11</span>
+        </div>
+        <div class="main">
+            <div class="title">
+                <p>名字</p>
+                <p>年龄</p>
+                <p>生日</p>
+                <p>出生地</p>
+            </div>
+            <div class="title">
+                <p>名字</p>
+                <p>年龄</p>
+                <p>生日</p>
+                <p>出生地</p>
+            </div>
+        </div>
+        <!-- <div class="load">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+        </div> -->
+    </div>
+    <script src="./app/libs/require.js"></script>
+    <script>
+        require(['./main.js'], function () {
+            require(['index'], function (index) {
+
+            })
+        })
+    </script>
+</body>
+
+</html>

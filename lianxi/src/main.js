@@ -1,0 +1,15 @@
+require.config({
+    paths:{
+        'index':'./app/js/index',
+        'jquery':'./app/libs/jquery.min',
+        'ajax':'./app/common/ajax',
+        'tab':'./app/js/tab',
+        'Swiper':'./app/libs/swiper.min',
+        'creatMock':'./app/js/creatMock',
+        'Mock':'./app/libs/mock-min',
+        'loading':'./app/js/loading',
+        'getMock':'./app/js/getMock',
+        'lou':'./app/js/lou',
+        'ceil':'./app/js/ceiling'
+    }
+})

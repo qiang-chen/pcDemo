@@ -1,0 +1,27 @@
+require.config({
+    paths:{
+        'css':'./app/libs/css.min',
+        'Swiper':'./app/libs/swiper.min',
+        'home':'./app/js/home',
+        'mySwiper':'./app/js/mySwiper',
+        'ajax':'./app/common/ajax',
+        'mock':'./app/libs/mock-min',
+        'myMock':'./app/common/myMock',
+        'render':'./app/js/render',
+        'lazyload':'./app/common/lazyload',
+        'Enter':'./app/js/enter',
+        "mouse":'./app/js/mouse',
+        'index1':'./app/js/index1',
+        'ajax':'./app/common/ajax',
+        'getMock':'./app/common/getMock',
+        'home1':'./app/js/home1',
+        'Mock':'./app/libs/mock-min',
+        'utils':'./app/common/utils'
+    },
+    shim:{
+        'Swiper':{
+            exports:[],
+            deps:['css!../src/fonts/iconfont.css','css!../src/app/css/homePage.css','css!../src/app/libs/swiper.min.css']
+        }
+    }
+})

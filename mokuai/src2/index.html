@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./app/libs/require.js"></script>
+    <script>
+        //第一步 先把libs这个文件夹中的require.js引过来
+        //第二步 把main.js弄过来
+        //第三部 去main.js写
+        //调用这个main.js
+        require(['./main.js'],function(){
+            require(['ajax','tab'],function(ajax,tab){
+                
+            })
+        })
+     </script>
+</body>
+</html>

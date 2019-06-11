@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid;
+            margin: 100px auto;
+            display: flex;
+            text-align: center;
+        }
+        .box div{
+            flex: 1;
+        }
+        .box div.active{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>11</div>
+        <div>22</div>
+        <div>33</div>
+        <div>44</div>
+    </div>
+    <script src="./app/libs/require.js"></script>
+    <script>
+        require(['./main.js'],function(){
+            require(['ajax','tab'],function(ajax,tab){
+                    tab()
+            })
+        })
+    </script>
+</body>
+</html>

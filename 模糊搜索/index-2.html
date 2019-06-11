@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" class="user">
+    <div class="box"></div>
+</body>
+<script>
+    var arr = ["js", "jquery", "val", "node", "html", "css"];
+    var user = document.querySelector(".user");
+    var box = document.querySelector(".box");
+    user.oninput = function () {
+        var value = user.value;
+        arr.forEach(function (item) {
+            if (value.length != 0) {
+                if (item.indexOf(value) != -1) {
+                    box.innerHTML+=`<p>${item}</p>`;
+                }
+            }
+
+        })
+    }
+</script>
+
+</html>

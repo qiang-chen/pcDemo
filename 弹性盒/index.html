@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .top {
+            width: 100%;
+            height: 40px;
+            background: #ccc;
+            display: flex;
+            justify-content: center;
+        }
+
+        .top div {
+            flex: 1;
+        }
+        .box{
+            width: 700px;
+            height: 300px;
+            border: 1px solid;
+            margin: 100px auto;
+            display: flex;
+            /* flex-direction: column; 本来弹性盒能够让元素在一行显示 加上他就竖着了*/
+        }
+        .left{
+            flex: 3;
+            border: solid 2px green;
+        }
+        .right{
+            flex: 7;
+            border: solid 2px red;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div>111</div>
+        <div>222</div>
+        <div>33ddd3</div>
+        <div>444</div>
+        <div>55v5f</div>
+        <div>66cf6</div>
+        <div>777</div>
+    </div>
+    <div class="box">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+
+</html>
